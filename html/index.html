@@ -393,5 +393,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "aff08b23-ce79-416e-b476-7967293a34a2", 
+          region: "au-syd", 
+          serviceInstanceID: "f5093cd3-f4d2-4674-83b9-cc27312641a5", 
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
 </body>
 </html>
