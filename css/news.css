@@ -156,3 +156,29 @@
     margin: 0;
     line-height: 1rem;
 }
+
+@media (max-width: 767px){
+    
+    
+    #newsletter .tt-news{
+        text-align: center;
+        align-items: center;
+    }
+    
+    .l-news__latest-newses{
+        display: flex;
+        flex-direction: column;
+        height: 1300px;
+    }
+
+    .c-news--first {
+        padding-left: 1.2rem;
+    }
+    
+    .nw__list__ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
