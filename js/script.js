@@ -20,48 +20,40 @@ document.addEventListener('DOMContentLoaded', function() {
     checkVisibility();
 });
 
-
-const nav = document.querySelector(".cab-nav");
-const btnMenu = document.querySelector(".btn-menu");
-const menu = document.querySelector(".menu");
-
-function handleButtonClick(event){
-    if (event.type === "touchstart") event.preventDefault();
-    event.stopPropagation();
-    nav.classList.toggle("active");
-    handleClickOutside(menu, () => {
-        nav.classList.remove("active");
-        setAria();
-    });
-    setAria();
-}
-
-function handleClickOutside(targetElement, callback){
-    const html = document.documentElement;
-    function handleHTMLClick(event){
-        if (!targetElement.contains(event.target)){
-            targetElement.removeAttribute("data-target");
-            html.removeEventListener("click", handleHTMLClick);
-            html.removeEventListener("touchstart", handleHTMLClick);
-            callback()
+document.addEventListener('DOMContentLoaded', function() {
+    const quantidadeFinal = 80;
+    
+    const intervaloTempo = 50; 
+  
+    const tempoMaximo = 5000; 
+  
+    function atualizarContador(tempoInicial) {
+      const tempoDecorrido = Date.now() - tempoInicial;
+  
+      if (tempoDecorrido >= tempoMaximo) {
+        console.log('Tempo máximo de carregamento atingido');
+        return;
+      }
+  
+      const contadorElement = document.getElementById('count');
+  
+      if (quantidadeInicial < quantidadeFinal) {
+        quantidadeInicial += 1;
+  
+        if (quantidadeInicial > quantidadeFinal) {
+          quantidadeInicial = quantidadeFinal;
         }
+      }
+      
+      contadorElement.textContent = quantidadeInicial.toLocaleString(); 
+  
+     
+      if (quantidadeInicial < quantidadeFinal && tempoDecorrido < tempoMaximo) {
+        setTimeout(() => atualizarContador(tempoInicial), intervaloTempo); 
+      }
     }
-    if (!targetElement.hasAttribute("data-target")){
-        html.addEventListener("click", handleHTMLClick);
-        html.addEventListener("touchstart", handleHTMLClick);
-        targetElement.setAttribute("data-target", "")
-    }
-}
-
-function setAria(){
-    const isActive = nav.classList.contains("active");
-    btnMenu.setAttribute("aria-expanded", isActive);
-    if (isActive) {
-        btnMenu.setAttribute("aria-label", "Fechar Menu");
-    } else {
-        btnMenu.setAttribute("aria-label", "Abrir Menu");
-    }
-}
-
-btnMenu.addEventListener("click", handleButtonClick);
-btnMenu.addEventListener("touchstart", handleButtonClick);
+  
+    let quantidadeInicial = 0;
+    const tempoInicial = Date.now(); 
+    atualizarContador(tempoInicial);
+  });
