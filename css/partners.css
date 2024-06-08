@@ -57,3 +57,42 @@
     flex-direction: column;
     padding-top: 0.7rem;
 }
+
+@media (max-width: 767px){
+    
+    .tt-partners{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        padding-inline: 1em;
+        font-size: 15px;
+    }
+
+   .partners__first {
+        width: 100%;
+        padding-inline: 1rem;
+        justify-content: center;      
+          
+    
+    }
+
+    .pix {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-inline: 2rem;
+        align-items: center;
+        
+    }
+
+    .left__partners h1{
+        width: 100%;
+        text-align: center;
+    }
+
+    .left__partners p{
+        width: 100%;
+        padding-inline: 2rem;
+    }
+}

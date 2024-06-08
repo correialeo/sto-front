@@ -121,3 +121,35 @@ textarea:valid:focus {
     background-color: #363636;
     border: 1px solid #fff;
 }
+
+@media (max-width: 767px){
+
+    .img-footer img{
+        width: 300px;
+        padding-right: 0;
+    }
+    
+    .txt-foot{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding-top: 1rem;
+        padding-right: 2.2rem;
+        
+    }
+
+    form {
+        width: 90%;
+        min-width: 0;
+        max-width: 35em;
+        background-color: #000;
+        
+    }
+    
+    #foot .line{
+        width: 85%;
+        padding-right: 2.2rem;
+    }
+
+}
