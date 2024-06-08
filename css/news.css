@@ -157,7 +157,7 @@
     line-height: 1rem;
 }
 
-@media (max-width: 767px){
+@media (min-width: 150px) and (max-width: 990px){
     
     
     #newsletter .tt-news{
@@ -178,6 +178,7 @@
     .nw__list__ul {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
     
 }

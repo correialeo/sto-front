@@ -35,3 +35,14 @@ html ::-webkit-scrollbar {
     opacity: 1;
     transform: translateY(0);
 }
+
+@media (min-width: 150px) and (max-width: 990px){
+
+  html{
+    width: 100%;
+  }
+  
+  .line, .line__black{
+    width: 80%;
+  }
+}

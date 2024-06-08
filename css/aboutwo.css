@@ -78,7 +78,12 @@ figure {
     border: none;
 }
 
-@media (max-width: 767px){
+.count__txt{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (min-width: 150px) and (max-width: 990px){
 
 
     #shark-txt{
